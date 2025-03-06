@@ -1,0 +1,15 @@
+class Solution {
+    public int sumOfUnique(int[] nums) {
+        int n=nums.length;
+        int sum=0;
+       int[] ans=new int[1000];
+       for(int num:nums){
+         ans[num]++;
+        if(ans[num]==1)
+        sum+=num;
+        if(ans[num]==2)
+        sum-=num;
+    }
+       return sum;
+}
+}
