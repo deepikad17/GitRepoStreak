@@ -1,0 +1,19 @@
+class Solution {
+    public int maximumPopulation(int[][] logs) {
+        int maxpopulation=0;
+        int earlieryear=1950;
+        for(int year=1950;year<=2050;year++){
+            int population=0;
+            for(int[] log:logs){
+                if(year>=log[0]&&year<log[1]){
+                    population++;
+                }
+            }
+            if(population>maxpopulation){
+                maxpopulation=population;
+                earlieryear=year;
+            }
+        }
+        return earlieryear;
+    }
+}
